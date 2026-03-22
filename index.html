@@ -342,6 +342,17 @@
         justify-content: center;
       }
     }
+    .hero-intro-image-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+    
+    .hero-intro-image {
+      display: block;
+      width: min(100%, 520px);
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -361,10 +372,14 @@
         <div class="hero-card">
           <div class="eyebrow" data-el="Οδηγός Καλεσμένων" data-en="Guest Guide">Οδηγός Καλεσμένων</div>
 
-          <h1 class="hero-title" data-el="Χρήστος & Ιωάννα" data-en="Christos & Ioanna">Χρήστος & Ιωάννα</h1>
-
-          <div class="hero-date">29.08.2026</div>
-
+          <div class="hero-intro-image-wrap">
+            <img
+              src="static/intro.png"
+              alt="Χρήστος και Ιωάννα - 29.08.2026"
+              class="hero-intro-image"
+            />
+          </div>
+        
           <p class="hero-place"
              data-el="Συγκεντρώσαμε σε μία σελίδα χρήσιμες πληροφορίες για τη διαμονή, τις μετακινήσεις, το φαγητό, τις παραλίες και γενικά όσα μπορεί να σας φανούν χρήσιμα για το γαμήλιο Σαββατοκύριακο."
              data-en="We gathered everything useful for our wedding weekend in one place, including accommodation, distances, food, beaches, and a few local tips for our guests.">
