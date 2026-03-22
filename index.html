@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Χρήστος & Ιωάννα — Save the Date</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --blue: #1f4584;
+      --blue-soft: #9aaed0;
+      --card: rgba(255, 255, 255, 0.82);
+      --border: rgba(31, 69, 132, 0.18);
+      --shadow: 0 18px 50px rgba(31, 69, 132, 0.10);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(154, 174, 204, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(31, 69, 132, 0.08), transparent 28%),
+        var(--bg);
+      color: var(--blue);
+      font-family: "Manrope", system-ui, sans-serif;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .screen,
+    .content {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card,
+    .content-card {
+      width: 100%;
+      max-width: 760px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card {
+      max-width: 500px;
+      padding: 36px 30px;
+      text-align: center;
+    }
+
+    .content-card {
+      padding: 34px 28px 40px;
+    }
+
+    .language-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .lang-btn {
+      border: 1px solid rgba(31, 69, 132, 0.25);
+      background: transparent;
+      color: var(--blue);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+      width: auto;
+      margin: 0;
+    }
+
+    .lang-btn.active,
+    .lang-btn:hover {
+      background: var(--blue);
+      color: white;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      margin-bottom: 16px;
+    }
+
+    .script-title,
+    .names,
+    .main-script {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .script-title {
+      font-size: 3rem;
+      margin: 0 0 10px;
+    }
+
+    .main-script {
+      font-size: 2.2rem;
+      margin: 0 0 8px;
+    }
+
+    .subtitle,
+    .small-text,
+    .message {
+      color: var(--blue);
+      opacity: 0.88;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(31, 69, 132, 0.2);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--blue);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input[type="password"]:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(31, 69, 132, 0.10);
+    }
+
+    button.primary {
+      width: 100%;
+      margin-top: 14px;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button.primary:hover {
+      opacity: 0.92;
+    }
+
+    .message {
+      min-height: 24px;
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+
+    .frame {
+      border: 2px solid var(--blue);
+      border-radius: 20px;
+      padding: 34px 24px 42px;
+      text-align: center;
+      position: relative;
+    }
+
+    .frame::before,
+    .frame::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-color: var(--blue);
+      opacity: 0.9;
+    }
+
+    .frame::before {
+      top: 14px;
+      left: 14px;
+      border-top: 3px solid var(--blue);
+      border-left: 3px solid var(--blue);
+      border-top-left-radius: 10px;
+    }
+
+    .frame::after {
+      right: 14px;
+      bottom: 14px;
+      border-right: 3px solid var(--blue);
+      border-bottom: 3px solid var(--blue);
+      border-bottom-right-radius: 10px;
+    }
+
+    .save-date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.4rem;
+      margin: 0 0 6px;
+    }
+
+    .star {
+      font-size: 2.4rem;
+      line-height: 1;
+      margin: 6px 0 10px;
+    }
+
+    .names {
+      font-size: 4rem;
+      margin: 0 0 8px;
+    }
+
+    .date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.4rem;
+      margin: 10px 0 18px;
+    }
+
+    .invite-line,
+    .location,
+    .note {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    .note {
+      font-size: 1.5rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .small-lock {
+      font-size: 0.85rem;
+      color: var(--blue-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .script-title {
+        font-size: 2.4rem;
+      }
+
+      .save-date {
+        font-size: 2.6rem;
+      }
+
+      .names {
+        font-size: 3rem;
+      }
+
+      .date {
+        font-size: 2rem;
+      }
+
+      .invite-line,
+      .location {
+        font-size: 1.65rem;
+      }
+
+      .note {
+        font-size: 1.2rem;
+      }
+
+      .frame {
+        padding: 28px 18px 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOCK SCREEN -->
+  <div id="loginScreen" class="screen">
+    <div class="card">
+      <div class="language-bar">
+        <button class="lang-btn active" id="btnElTop">GR</button>
+        <button class="lang-btn" id="btnEnTop">EN</button>
+      </div>
+
+      <div class="eyebrow" data-el="Ιδιωτική Πρόσκληση" data-en="Private Invitation">Ιδιωτική Πρόσκληση</div>
+      <h1 class="script-title">Χρήστος & Ιωάννα</h1>
+      <p class="subtitle"
+         data-el="Παρακαλούμε εισάγετε τον κωδικό για να δείτε το save the date."
+         data-en="Please enter the password to view our save the date.">
+         Παρακαλούμε εισάγετε τον κωδικό για να δείτε το save the date.
+      </p>
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Κωδικός πρόσβασης"
+        autocomplete="off"
+      />
+      <button class="primary" id="enterButton"
+        data-el="Είσοδος"
+        data-en="Enter">Είσοδος</button>
+
+      <div id="message" class="message"></div>
+    </div>
+  </div>
+
+  <!-- SITE CONTENT -->
+  <div id="siteContent" class="content hidden">
+    <div class="content-card">
+      <div class="top-row">
+        <div class="small-lock"
+             data-el="Save the Date"
+             data-en="Save the Date">Save the Date</div>
+        <div class="language-bar" style="margin:0;">
+          <button class="lang-btn active" id="btnEl">GR</button>
+          <button class="lang-btn" id="btnEn">EN</button>
+        </div>
+      </div>
+
+      <div class="frame">
+        <h2 class="save-date"
+            data-el="Κρατήστε την ημερομηνία"
+            data-en="Save our Date">Κρατήστε την ημερομηνία</h2>
+
+        <div class="star">*</div>
+
+        <div class="names"
+             data-el="Χρήστος & Ιωάννα"
+             data-en="Christos & Ioanna">Χρήστος & Ιωάννα</div>
+
+        <div class="date">29.08.2026</div>
+
+        <div class="invite-line"
+             data-el="Σας καλούμε στον γάμο μας."
+             data-en="We invite you to our wedding.">Σας καλούμε στον γάμο μας.</div>
+
+        <div class="location"
+             data-el="Κουρούτα, Αμαλιάδα"
+             data-en="Kourouta, Amaliada">Κουρούτα, Αμαλιάδα</div>
+
+        <div class="note"
+             data-el="Η επίσημη πρόσκληση και περισσότερες λεπτομέρειες θα ακολουθήσουν."
+             data-en="Formal invitation and further details will follow.">
+             Η επίσημη πρόσκληση και περισσότερες λεπτομέρειες θα ακολουθήσουν.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const correctPassword = "29082026";
+    let currentLanguage = "el";
+
+    const passwordInput = document.getElementById("passwordInput");
+    const enterButton = document.getElementById("enterButton");
+    const message = document.getElementById("message");
+    const loginScreen = document.getElementById("loginScreen");
+    const siteContent = document.getElementById("siteContent");
+
+    const btnElTop = document.getElementById("btnElTop");
+    const btnEnTop = document.getElementById("btnEnTop");
+    const btnEl = document.getElementById("btnEl");
+    const btnEn = document.getElementById("btnEn");
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-el]").forEach((el) => {
+        el.textContent = lang === "el" ? el.getAttribute("data-el") : el.getAttribute("data-en");
+      });
+
+      passwordInput.placeholder = lang === "el" ? "Κωδικός πρόσβασης" : "Password";
+
+      if (lang === "el") {
+        btnElTop.classList.add("active");
+        btnEnTop.classList.remove("active");
+        btnEl.classList.add("active");
+        btnEn.classList.remove("active");
+      } else {
+        btnEnTop.classList.add("active");
+        btnElTop.classList.remove("active");
+        btnEn.classList.add("active");
+        btnEl.classList.remove("active");
+      }
+
+      localStorage.setItem("weddingLanguage", lang);
+    }
+
+    function unlockSite() {
+      const enteredPassword = passwordInput.value.trim();
+
+      if (enteredPassword === correctPassword) {
+        loginScreen.classList.add("hidden");
+        siteContent.classList.remove("hidden");
+        sessionStorage.setItem("weddingSiteUnlocked", "true");
+        message.textContent = "";
+      } else {
+        message.textContent = currentLanguage === "el"
+          ? "Λάθος κωδικός. Προσπαθήστε ξανά."
+          : "Incorrect password. Please try again.";
+        passwordInput.value = "";
+      }
+    }
+
+    enterButton.addEventListener("click", unlockSite);
+
+    passwordInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") unlockSite();
+    });
+
+    btnElTop.addEventListener("click", () => setLanguage("el"));
+    btnEnTop.addEventListener("click", () => setLanguage("en"));
+    btnEl.addEventListener("click", () => setLanguage("el"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = localStorage.getItem("weddingLanguage") || "el";
+    setLanguage(savedLanguage);
+
+    if (sessionStorage.getItem("weddingSiteUnlocked") === "true") {
+      loginScreen.classList.add("hidden");
+      siteContent.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
