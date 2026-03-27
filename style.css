@@ -353,7 +353,8 @@ a {
   border-bottom-color: var(--primary);
 }
 
-.list a::before {
-  content: "📍 ";
-  font-size: 0.9em;
+.recommended::after {
+  content: " ✦";
+  margin-left: 4px;
+  color: var(--primary);
 }
