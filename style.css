@@ -352,3 +352,8 @@ a {
 .list a:hover {
   border-bottom-color: var(--primary);
 }
+
+.list a::before {
+  content: "📍 ";
+  font-size: 0.9em;
+}
