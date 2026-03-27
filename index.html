@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   
 </head>
@@ -15,9 +16,12 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand" data-el="Χρήστος & Ιωάννα" data-en="Christos & Ioanna">Χρήστος & Ιωάννα</div>
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btnEl">GR</button>
-        <button class="lang-btn" id="btnEn">EN</button>
+      <div class="top-actions">
+        <button class="lang-toggle" id="langToggle">GR</button>
+      
+        <a href="#map" class="map-btn" title="Map">
+          <i class="fas fa-map-marker-alt"></i>
+        </a>
       </div>
     </div>
   </header>
