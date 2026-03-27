@@ -329,6 +329,13 @@ a {
 
   .brand {
     text-align: center;
+    margin-bottom: 8px;
+  }
+  .top-actions {
+    display: flex;
+    justify-content: space-between; /* 👈 THIS does the magic */
+    align-items: center;
+    width: 100%;
   }
 
   .lang-switch {
@@ -373,4 +380,47 @@ a {
 
 .map-btn i {
   font-size: 16px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Toggle button */
+.lang-toggle {
+  border: 1px solid rgba(31,69,132,0.25);
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(31,69,132,0.25);
+  color: var(--primary);
+}
+
+.map-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.lang-toggle {
+  border: 1px solid rgba(31,69,132,0.25);
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
 }
