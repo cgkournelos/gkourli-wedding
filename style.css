@@ -370,3 +370,7 @@ a {
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
+
+.map-btn i {
+  font-size: 16px;
+}
