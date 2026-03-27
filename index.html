@@ -357,47 +357,27 @@
   </footer>
 
   <script>
-    let currentLanguage = localStorage.getItem("weddingLanguage") || "el";
-
-    const btnEl = document.getElementById("btnEl");
-    const btnEn = document.getElementById("btnEn");
-
-    function setLanguage(lang) {
-      currentLanguage = lang;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-el]").forEach((el) => {
-        el.textContent = lang === "el" ? el.getAttribute("data-el") : el.getAttribute("data-en");
-      });
-
-      btnEl.classList.toggle("active", lang === "el");
-      btnEn.classList.toggle("active", lang === "en");
-
-      localStorage.setItem("weddingLanguage", lang);
-    }
-
-    const langToggle = document.getElementById("langToggle");
-
-    function updateToggleUI() {
-      if (currentLanguage === "el") {
-        langToggle.textContent = "GR";
-        langToggle.classList.remove("alt");
-      } else {
-        langToggle.textContent = "EN";
-        langToggle.classList.add("alt");
-      }
-    }
-    
-    langToggle.addEventListener("click", () => {
-      const newLang = currentLanguage === "el" ? "en" : "el";
-      setLanguage(newLang);
-      updateToggleUI();
+  let currentLanguage = localStorage.getItem("weddingLanguage") || "el";
+  
+  const langToggle = document.getElementById("langToggle");
+  
+  function updateToggleUI() {
+    langToggle.textContent = currentLanguage === "el" ? "GR" : "EN";
+  }
+  
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+  
+    document.querySelectorAll("[data-el]").forEach((el) => {
+      el.textContent = lang === "el"
+        ? el.getAttribute("data-el")
+        : el.getAttribute("data-en");
     });
-
-    // initialize
+  
+    localStorage.setItem("weddingLanguage", lang);
     updateToggleUI();
-
-    setLanguage(currentLanguage);
+  }
   </script>
 </body>
 </html>
