@@ -200,6 +200,11 @@ a {
   background: rgba(31,69,132,0.05);
 }
 
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
 .section {
   padding: 18px 0;
 }
@@ -357,4 +362,11 @@ a {
   content: " ✦";
   margin-left: 4px;
   color: var(--primary);
+}
+
+.map-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
