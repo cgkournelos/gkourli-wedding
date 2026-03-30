@@ -244,6 +244,7 @@ a {
   box-shadow: var(--shadow);
   padding: 22px 20px;
   height: 100%;
+  position: relative;
 }
 
 .card h3 {
@@ -255,6 +256,24 @@ a {
 .card p {
   margin: 0;
   color: var(--muted);
+}
+
+.card-icon {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+
+  width: 40px;
+  height: 40px;
+
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border: 1px solid var(--border);
+
+  object-fit: contain;
 }
 
 .list {
@@ -333,7 +352,7 @@ a {
   }
   .top-actions {
     display: flex;
-    justify-content: space-between; /* 👈 THIS does the magic */
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
   }
@@ -341,7 +360,17 @@ a {
   .lang-switch {
     justify-content: center;
   }
+
+  .card-icon {
+    width: 34px;
+    height: 34px;
+    top: -10px;
+    right: -10px;
+    padding: 5px;
+  }
+  
 }
+
 .hero-intro-image-wrap {
   display: flex;
   justify-content: center;
