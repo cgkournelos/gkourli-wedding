@@ -271,6 +271,12 @@ a {
 
   pointer-events: none;
 }
+#venue .card-icon {
+  width: 156px;
+  height: 156px;
+  top: -14px;
+  right: -14px;
+}
 
 .list {
   margin: 0;
@@ -360,6 +366,13 @@ a {
   .card-icon {
     width: 64px;
     height: 64px;
+    top: -14px;
+    right: -14px;
+  }
+  
+  #venue .card-icon {
+    width: 96px;
+    height: 96px;
     top: -14px;
     right: -14px;
   }
