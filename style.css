@@ -461,3 +461,12 @@ a {
   border-radius: 999px;
   font-weight: 600;
 }
+
+.legend-note {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+  opacity: 0.6;
+  margin-top: 28px;
+}
